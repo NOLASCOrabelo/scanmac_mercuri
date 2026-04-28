@@ -1,0 +1,3 @@
+pyTelegramBotAPI
+python-nmap
+python-dotenv
