@@ -90,7 +90,8 @@ def loop_scanner():
     while True:
         print("Buscando novos dispositivos...")
         # Executa arp-scan e captura a saída
-        cmd = "sudo arp-scan --localnet"
+        iface = os.getenv('NETWORK_INTERFACE', 'eth0')
+        cmd = f"arp-scan -I {iface} --localnet"
         resultado = subprocess.getoutput(cmd)
         
         whitelist = carregar_whitelist()

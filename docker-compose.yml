@@ -6,8 +6,12 @@ services:
     container_name: net-guard-bot
     restart: always
     network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     volumes:
       - ./whitelist.json:/app/whitelist.json
     environment:
-      - TELEGRAM_TOKEN=8T683663523:AAFAY4H8bAsugCAtwVTDeyr8osRGJm0V4E
+      - TELEGRAM_TOKEN=8683663523:AAFAY4TH8bAsugCAtwVTDeyr8osRGJm0V4E
       - CHAT_ID=6317626166s
+      - NETWORK_INTERFACE=wlp3s0
